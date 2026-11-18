@@ -1,5 +1,4 @@
-/* Create a generic class named Node that is based on the PrintNode method in D2L.
-This is used to represent an entry in the reference-based linked list stack */
+/* This is used to represent an entry in the reference-based linked list stack */
 
 public class Node
 {
