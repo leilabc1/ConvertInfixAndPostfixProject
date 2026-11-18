@@ -75,6 +75,25 @@ private String peek() {
 
 }
 
+// ------------Order of the rest of the code---------------
+
+// isOpenParenthesis
+
+// isClosed Parenthesis 
+
+// isOperator 
+
+// isInteger 
+
+// precedence 
+
+// convertToPostfix 
+
+
+// convertToInfix
+
+
+
 
 }
 
