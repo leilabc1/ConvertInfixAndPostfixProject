@@ -77,13 +77,36 @@ private String peek() {
 
 // ------------Order of the rest of the code---------------
 
-// isOpenParenthesis
+    //returns boolean based on whether the string is an integer or not
+    public boolean isInteger(String token) {
+        if (token == null || token.isEmpty()) {
+            return false;
+        }//end if
+        try {
+            Integer.parseInt(token);
+            return true;
+        }//end try
+        catch (NumberFormatException e) {
+            return false;
+        }//end catch
+    }// end isInteger
 
-// isClosed Parenthesis 
+    //returns boolean based on where the string is an operator (+-*%/) or not
+    public boolean isOperator(String operator) {
+        return "+".equals(operator) || "-".equals(operator) || "*".equals(operator)
+                || "%".equals(operator) || "/".equals(operator);
+    }//end isOperator
 
-// isOperator 
+    //returns a boolean based on whether the string is an open parentheses ('(')or not
+    public boolean isOpenParentheses(String token) {
+        return "(".equals(token);
+    }//end isOpenParentheses
 
-// isInteger 
+    //returns a boolean based on whether the string is a closed parentheses
+    public boolean isClosedParentheses(String token) {
+        return ")".equals(token);
+    }//end isClosedParentheses
+    
 
 // precedence 
 
