@@ -2,7 +2,8 @@
 
 
  // changed PrintNode to make it more generic, took out "String" and replaced it with "T" to make it more generic
-public class Node
+package CSCI3200;
+public class Node<T>
 {
 private T job;
 private Node<T> link;
@@ -22,11 +23,11 @@ public Node(T job, Node<T> link)
 this.job = job;
 this.link = link;
 }
-public void setLink (Node newLink)
+public void setLink (Node<T> newLink)
 {
 link = newLink;
 }
-public void setJob (Node<T> newJob)
+public void setJob (T newJob)
 {
 job = newJob;
 }
