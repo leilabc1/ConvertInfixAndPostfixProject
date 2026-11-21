@@ -1,15 +1,8 @@
-/* needs the following methods: 
-pushToStack
-popToStack
-isEmptyStack
-convertToInFix
-convertToPostFix
-*/
 
 /* John is doing token helpers- isInteger, isOperator, isOpenParentheses, isClosedParentheses, and convertToInFix along with 
-any other helper methods that are needed for the project. */
+a couple helper methods */
 
-// Leila is doing pushToStack, popToStack, isEmptyStack, convertToPostFix, and peek (helper method)
+// Leila is doing pushToStack, popToStack, isEmptyStack, convertToPostFix, and a couple other helper methods 
 
 public class InfixandPostfix {
 
@@ -144,9 +137,88 @@ public int precedence(String operator) {
     //otherwise, return 0
     return 0;
 }//end precedence
- // ------------Order of the rest of the code---------------
 
-// convertToPostfix 
+
+public String convertToPostfix(String exp) {
+
+String output = "";
+String[] tokens = exp.trim().split("\\s+"); 
+int i = 0; 
+
+while (i < tokens.length) {
+
+    String token = tokens[i];
+
+    if (isInteger(token)) {
+        output = output + token + " "; 
+
+    }else{ 
+
+        String symbol = token; 
+
+        if (isOpenParentheses(symbol)) { 
+
+            pushToStack(symbol);
+
+        } else if (isOperator(symbol)) {
+
+            while (!isEmptyStack() && !isOpenParentheses(peek()) && precedence(peek()) >= precedence(symbol))
+            { 
+
+            Node<String> removed = popToStack(); 
+            output = output + removed.getJob() + " "; 
+            
+            removed = null; 
+            } 
+
+        pushtoStack(symbol);
+        }
+    else if (isClosedParentheses(symbol)) { 
+
+            while (!isEmptyStack() && !isOpenParentheses(peek()))    
+            {
+                Node<String> removed = popToStack();
+                output = output + removed.getJob() + " ";
+
+                removed = null; 
+            }
+
+            Node<String> paren = popToStack(); 
+            paren = nulll 
+        }
+    }
+    i++; 
+} 
+
+while (!isEmptyStack()) { 
+
+    Node<String> removed = popToStack(); 
+    ouutput = output + removed.getJob() + " ";
+
+    removed = null; 
+
+} 
+
+return output.trim(); 
+
+
+
+            }
+
+
+            // convertToInfix
+
+
+
+        }
+
+              }
+
+
+        }
+
+
+    }
 
 }
 
