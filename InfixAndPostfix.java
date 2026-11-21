@@ -132,9 +132,19 @@ private String peek() {
     return infix; //returns final expression
 }//end convertToInfix
 
+//takes a operand, returns a numerical priority value
+public int precedence(String operator) {
+    // multiplication, division, mod return a 2
+    if ("*".equals(operator) || "/".equals(operator) || "%".equals(operator)) {
+        return 2;
+    //addition, subtraction return 1
+    } else if ("+".equals(operator) || "-".equals(operator)) {
+        return 1;
+    }//end else if
+    //otherwise, return 0
+    return 0;
+}//end precedence
  // ------------Order of the rest of the code---------------
-
-// precedence 
 
 // convertToPostfix 
 
