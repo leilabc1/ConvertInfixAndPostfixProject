@@ -139,11 +139,19 @@ public int precedence(String operator) {
 }//end precedence
 
 
+
 public String convertToPostfix(String exp) {
 
 String output = "";
+// trims text into pieces at the spaces 
 String[] tokens = exp.trim().split("\\s+"); 
 int i = 0; 
+
+/* while there is more to read -> 
+    num -> write to output 
+    ( -> push 
+    op -> pop equal/higher precedence to the output, then push 
+    ) -> pop to output until (, then discard */ 
 
 while (i < tokens.length) {
 
@@ -190,6 +198,7 @@ while (i < tokens.length) {
     i++; 
 } 
 
+// pop whatever is left to output 
 while (!isEmptyStack()) { 
 
     Node<String> removed = popToStack(); 
@@ -206,7 +215,7 @@ return output.trim();
             }
 
 
-            // convertToInfix
+    
 
 
 
