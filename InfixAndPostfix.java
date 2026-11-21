@@ -3,7 +3,7 @@
 a couple helper methods */
 
 // Leila is doing pushToStack, popToStack, isEmptyStack, convertToPostFix, and a couple other helper methods 
-
+package CSCI3200;
 public class InfixandPostfix {
 
     // data field that points to top of stack, null if stack is empty
@@ -179,7 +179,7 @@ while (i < tokens.length) {
             removed = null; 
             } 
 
-        pushtoStack(symbol);
+        pushToStack(symbol);
         }
     else if (isClosedParentheses(symbol)) { 
 
@@ -202,33 +202,12 @@ while (i < tokens.length) {
 while (!isEmptyStack()) { 
 
     Node<String> removed = popToStack(); 
-    ouutput = output + removed.getJob() + " ";
+    output = output + removed.getJob() + " ";
 
     removed = null; 
 
 } 
 
 return output.trim(); 
-
-
-
-            }
-
-
-    
-
-
-
-        }
-
-              }
-
-
-        }
-
-
-    }
-
 }
-
-
+}
