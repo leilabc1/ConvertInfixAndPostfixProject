@@ -4,7 +4,7 @@ a couple helper methods */
 
 // Leila is doing pushToStack, popToStack, isEmptyStack, convertToPostFix, and a couple other helper methods 
 package CSCI3200;
-public class InfixandPostfix {
+public class InfixAndPostfix {
 
     // data field that points to top of stack, null if stack is empty
     private Node<String> head; 
@@ -192,7 +192,7 @@ while (i < tokens.length) {
             }
 
             Node<String> paren = popToStack(); 
-            paren = nulll 
+            paren = null;
         }
     }
     i++; 
