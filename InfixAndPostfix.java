@@ -71,8 +71,6 @@ private String peek() {
 
 }
 
-// ------------Order of the rest of the code---------------
-
     //returns boolean based on whether the string is an integer or not
     public boolean isInteger(String token) {
         if (token == null || token.isEmpty()) {
@@ -102,17 +100,43 @@ private String peek() {
     public boolean isClosedParentheses(String token) {
         return ")".equals(token);
     }//end isClosedParentheses
-    
+
+    // returns complete infix expression 
+    public String convertToInfix(String exp) {
+    //separates parts of the expression into tokens
+    String[] tokens = exp.trim().split("\\s+");
+
+    //for each token in tokens, push token to stack if it is an integer
+    for (String token : tokens) {
+        if (isInteger(token)) {
+            pushToStack(token);
+        }//end if
+        else if (isOperator(token)) { //pulls the left and right operand to add to final expression
+            Node<String> rightNode = popToStack();
+            String operand2 = rightNode.getJob();
+            rightNode = null;
+
+            Node<String> leftNode = popToStack();
+            String operand1 = leftNode.getJob();
+            leftNode = null;
+            //builds final expression
+            String newExpr = "(" + operand1 + " " + token + " " + operand2 + ")";
+            pushToStack(newExpr);
+        }//end else if
+    }//end for
+
+    Node<String> resultNode = popToStack();
+    String infix = resultNode.getJob();
+    resultNode = null;
+
+    return infix; //returns final expression
+}//end convertToInfix
+
+ // ------------Order of the rest of the code---------------
 
 // precedence 
 
 // convertToPostfix 
-
-
-// convertToInfix
-
-
-
 
 }
 
