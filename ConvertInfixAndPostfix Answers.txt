@@ -1,0 +1,12 @@
+Questions: 
+
+1. What is the time complexity of each method defined in the
+convertToPostfix and convertToInfix except the constructors. Show work.
+
+
+2. Why did we choose to use a Stack instead of Queue structure to evaluate the
+postfix expression?
+
+
+3. Identify and describe three (3) additional direct application of stacks in
+computer science
