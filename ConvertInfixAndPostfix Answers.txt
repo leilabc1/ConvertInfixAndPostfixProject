@@ -3,10 +3,34 @@ Questions:
 1. What is the time complexity of each method defined in the
 convertToPostfix and convertToInfix except the constructors. Show work.
 
+    exp.trim().split("\\s+") --> O(n)
+    while (i < tokens.length), inner while loop --> n 
+    isInteger, isOpenParentheses, isOperaor, isClosedParentheses, precedence, peek, 
+    pushToStack, and popToStack --> O(1)
+    --> split O(n) + main loop: O(n) + total pops: O(n) = O(n)
+
+
 
 2. Why did we choose to use a Stack instead of Queue structure to evaluate the
 postfix expression?
 
+A stack is chosen for a postfix calculator because of its LIFO nature. LIFO allows the program to match operators with the two most recent operands.
+ A queue's FIFO structure would need to be heavily modified with temp variables to simulate the same program.
+ Sources: 
+ https://math.hws.edu/eck/cs124/javanotes5/c9/s3.html
+ https://ha.random.studio/c-postfix-calculator-using-stack
+
+
 
 3. Identify and describe three (3) additional direct application of stacks in
 computer science
+
+    1. Broswers, when you click the forward or backward button. 
+    2. Function call management, when a function is called it's information 
+    (paremeters, local variables) are saved to a stack 
+    3. Depth-First Search, a stack is used to keep track of the vertices that haven't been 
+    explored yet. The node that was last visited is pushed on the stack. 
+  
+Sources: 
+https://www.geeksforgeeks.org/dsa/applications-advantages-and-disadvantages-of-stack/
+https://algorithmroom.com/dsa/applications-of-stack
